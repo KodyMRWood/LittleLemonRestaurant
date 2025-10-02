@@ -8,8 +8,8 @@ function AboutSection() {
         <h2>Chicago</h2>
         <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
 
-        <img src={ownerPicture1} className="" alt="Picture of Mario and Adrian talking" width="200px"/>
-        <img src={ownerPicture2} className="" alt="Picture of Mario and Adrian dlaughing" width="200px"/>
+        <img src={ownerPicture1} className="" alt="Mario and Adrian talking" width="200px"/>
+        <img src={ownerPicture2} className="" alt="Mario and Adrian laughing" width="200px"/>
     </section>
   )
 }

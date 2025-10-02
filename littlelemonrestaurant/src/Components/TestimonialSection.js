@@ -3,7 +3,8 @@ import Testimonial from './Testimonial'
 
 function TestimonialSection() {
   return (
-    <section>
+    <section id="testimonial-section">
+      <h2 className="section-title">Testimonials</h2>
         <Testimonial></Testimonial>
         <Testimonial></Testimonial>
         <Testimonial></Testimonial>
