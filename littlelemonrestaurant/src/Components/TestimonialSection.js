@@ -5,10 +5,12 @@ function TestimonialSection() {
   return (
     <section id="testimonial-section">
       <h2 className="section-title">Testimonials</h2>
-        <Testimonial></Testimonial>
-        <Testimonial></Testimonial>
-        <Testimonial></Testimonial>
-        <Testimonial></Testimonial>
+        <div className="testimonial-cards-container">
+          <Testimonial></Testimonial>
+          <Testimonial></Testimonial>
+          <Testimonial></Testimonial>
+          <Testimonial></Testimonial>
+        </div>
     </section>
   )
 }
