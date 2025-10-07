@@ -14,7 +14,9 @@ function HeroSection() {
       </div>
         <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
         <img src={heroImage} className="hero-image" alt="Image of chef playing garnish on top plate of food"/>
-        <button className='reserve-button'>Reserve a Table</button>
+        <div className="reserve-button-container">
+          <button className='reserve-button'>Reserve a Table</button>
+        </div>
 
     </section>
   )
