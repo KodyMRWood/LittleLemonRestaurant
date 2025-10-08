@@ -5,7 +5,7 @@ function Testimonial() {
     <article className="testimonial">
         <img src={userPic} className="testimonial-image" alt="Image of customer who left this review"/>
         <h4 className="testimonial-name">Name</h4>
-        <h5 className="testimonial-rating">4.5/5</h5>
+        <p className="testimonial-rating">4.5/5</p>
         <p className="testimonial-description">Review of the food</p>
     </article>
   )
