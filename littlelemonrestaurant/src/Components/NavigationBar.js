@@ -1,5 +1,6 @@
 // Library Imports
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 //Images
 import logo from "../Assets/Logo.svg";
@@ -9,12 +10,12 @@ function NavigationBar() {
     <nav id="navigation-bar">
         <img src={logo} className="logo" alt="Little Lemon Logo" />
         <ul id="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#reservations">Reservations</a></li>
-            <li><a href="#orderOnline">Order Online</a></li>
-            <li><a href="#login">Login</a></li>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/">About</Link></li>
+            <li><Link to="/">Menu</Link></li>
+            <li><Link to="/booking">Reservations</Link></li>
+            <li><Link to="/">Order Online</Link></li>
+            <li><Link to="/">Login</Link></li>
         </ul>
     </nav>
   )

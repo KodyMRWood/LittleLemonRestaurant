@@ -86,7 +86,16 @@ body{
   margin: 20px 40px;
 
   font-family: var(--karla-text);
+}
 
+::-webkit-scrollbar{
+  display:none;
+}
+
+header{
+  border-bottom: 1px solid black;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 
@@ -122,6 +131,7 @@ section{
   justify-content: space-between;
   align-items: center;
   padding:0;
+  margin:0;
   list-style-type: none;
 
   font-family: var(--karla-text);
@@ -499,6 +509,18 @@ footer ul li{
   padding:0;
   margin-bottom: 15px;
   font-size: 1rem;
+}
+
+
+/* ------Booking Page------ */
+
+/* ------Booking Form------ */
+
+form{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
 }
 
 
