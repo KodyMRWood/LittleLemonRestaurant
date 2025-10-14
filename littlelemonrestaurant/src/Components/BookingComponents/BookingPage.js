@@ -1,31 +1,62 @@
-import { useReducer, useState } from 'react';
-import { render, screen } from '@testing-library/react';
+import {useEffect, useReducer, useState } from 'react';
 import BookingForm from './BookingForm';
+import { useNavigate } from 'react-router';
+
 
 export function initTimes(){
-        const times = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
+        const times = fetchAPI(new Date());
         return times;
 }
 
-
 export function updateTimes(state, action) {
-        switch(action)
-        {
-            case "2025-10-10":
-                return ["17:00", "18:00"];
-            case "2025-10-11":
-                return ["17:00", "18:00", "19:00", "20:00"];
-            default:
-                return ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-        }
+    return fetchAPI(new Date(action));
 }
 
+const seededRandom = function (seed) {
+  var m = 2 ** 35 - 31;
+  var a = 185852;
+  var s = seed % m;
+  return function () {
+    return (s = s * a % m) / m;
+  };
+}
+
+export const fetchAPI = function (date) {
+  let result = [];
+  let random = seededRandom(date.getDate());
+
+  for (let i = 17; i <= 23; i++) {
+    if (random() < 0.5) {
+      result.push(i + ':00');
+    }
+    if (random() < 0.5) {
+      result.push(i + ':30');
+    }
+  }
+  return result;
+};
+
+export const submitAPI = function (formData) {
+    console.log(formData.get('res-date'));
+    return true;
+};
+
 function BookingPage() {
-     const [availableTimes, setAvailableTimes] = useReducer(updateTimes, initTimes());
+
+    const navigate = useNavigate();
+    const [availableTimes, setAvailableTimes] = useReducer(updateTimes, initTimes());
+
+    function submitForm(event, formData) {
+        if(submitAPI(formData))
+        {
+            event.preventDefault();
+            navigate("/Booking-Confirmation");
+        }
+    };
 
   return (
     <main>
-        <BookingForm availableTimes={availableTimes} setAvailableTimes={setAvailableTimes}/>
+        <BookingForm availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} submit={submitForm} />
     </main>
   )
 }

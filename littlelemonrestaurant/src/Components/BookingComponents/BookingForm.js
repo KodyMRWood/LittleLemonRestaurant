@@ -14,7 +14,7 @@ function BookingForm(props) {
 
   return (
 
-    <form onSubmit={(e) => e.preventDefault()} id="booking-form">
+    <form onSubmit={(e) => e.preventDefault()} id="BookingForm">
         <label htmlFor="res-date">Choose date*</label>
         <input type="date" id="res-date" name="res-date" onChange={handleDateChange} required/>
 
@@ -36,7 +36,7 @@ function BookingForm(props) {
             <option value="promotion">Promotion</option>
         </select>
 
-        <input type="submit" value="Confirm Reservation" />
+        <button type="submit" value="Confirm Reservation" onClick={(e) => {props.submit(e,new FormData(document.forms.BookingForm))}}>Confirm Reservation</button>
     </form>
   )
 }
