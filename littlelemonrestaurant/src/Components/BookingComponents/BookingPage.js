@@ -1,15 +1,35 @@
-import {useEffect, useReducer, useState } from 'react';
+import {useReducer} from 'react';
 import BookingForm from './BookingForm';
 import { useNavigate } from 'react-router';
 
+const convertDate = function (date)
+{ 
+  return date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate();
+}
 
 export function initTimes(){
-        const times = fetchAPI(new Date());
-        return times;
+  var date = convertDate(new Date());
+  let dateData = JSON.parse(window.localStorage.getItem(date));
+  if(dateData)
+  {
+    return dateData;
+  }
+  else{
+    return fetchAPI(new Date());
+    
+  }
 }
 
 export function updateTimes(state, action) {
-    return fetchAPI(new Date(action));
+  var date = convertDate(new Date(action+"T00:00"));
+  let dateData = JSON.parse(window.localStorage.getItem(date));
+  if(dateData)
+  {
+    return dateData;
+  }
+  else{
+    return fetchAPI(new Date(date));
+  }
 }
 
 const seededRandom = function (seed) {
@@ -33,11 +53,30 @@ export const fetchAPI = function (date) {
       result.push(i + ':30');
     }
   }
+
+  let dateFormat = convertDate(date);
+  window.localStorage.setItem(dateFormat,JSON.stringify(result));
   return result;
 };
 
 export const submitAPI = function (formData) {
-    console.log(formData.get('res-date'));
+    const datePicked = convertDate(new Date(formData.get('res-date')+"T00:00"));
+    const timePicked = formData.get('res-time');
+
+    let dateData =JSON.parse(window.localStorage.getItem(datePicked));
+    if(dateData)
+    {
+      const index = dateData.indexOf(timePicked);
+      if(index >= 0)
+      {
+        dateData.splice(index,1);
+      }
+      window.localStorage.setItem(datePicked,JSON.stringify(dateData));
+    }
+    else
+    {
+      console.log("Error: No value found on LocalStorage");
+    }
     return true;
 };
 

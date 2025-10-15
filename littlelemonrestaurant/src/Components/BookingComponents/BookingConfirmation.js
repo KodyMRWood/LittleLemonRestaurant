@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router";
 
 function BookingConfirmation() {
+  const navigate = useNavigate();
   return (
     <main> Your Booking has been Confirmed! See you soon!
-        <button><Link to="/">Return to HomePage</Link></button>
+        <button onClick={()=>navigate('/')}>Home</button>
     </main>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 
 
 function BookingForm(props) {
@@ -16,19 +16,19 @@ function BookingForm(props) {
 
     <form onSubmit={(e) => e.preventDefault()} id="BookingForm">
         <label htmlFor="res-date">Choose date*</label>
-        <input type="date" id="res-date" name="res-date" onChange={handleDateChange} required/>
+        <input type="date" id="res-date" name="res-date" value={date} onChange={handleDateChange} required/>
 
         <label htmlFor="res-time">Choose time*</label>
-        <select id="res-time" name="res-time" onChange={(e)=> setTime(e.target.value)} required>
+        <select id="res-time" name="res-time" value={time} onChange={(e)=> setTime(e.target.value)} required>
             <option value="none">Pick a Time</option>
             {props.availableTimes.map((time) => <option key={time} value={time}>{time}</option>)}
         </select>
 
         <label htmlFor="guests">Number of guests*</label>
-        <input type="number" placeholder='1' min="1" max="10" id="guests" name="guests" onChange={(e)=> setGuests(e.target.value)} required/>
+        <input type="number" placeholder='1' min="1" max="10" id="guests" name="guests" value={guests} onChange={(e)=> setGuests(e.target.value)} required/>
 
         <label htmlFor="occasion">Occasion</label>
-        <select id="occasion" name="occasion" onChange={(e)=> setOccasion(e.target.value)}>
+        <select id="occasion" name="occasion" value={occasion} onChange={(e)=> setOccasion(e.target.value)}>
             <option value="none">None</option>
             <option value="birthday">Birthday</option>
             <option value="anniversary">Anniversary</option>
