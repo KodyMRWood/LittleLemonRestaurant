@@ -1,6 +1,6 @@
 import {useReducer} from 'react';
 import BookingForm from './BookingForm';
-import { useNavigate } from 'react-router';
+import { useNavigate } from 'react-router-dom';
 
 const convertDate = function (date)
 { 

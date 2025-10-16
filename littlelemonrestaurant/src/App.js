@@ -3,7 +3,7 @@
 // Images
 
 // Imported Components
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
+import {Routes, Route} from 'react-router-dom';
 import Homepage from './Components/Homepage';
 import BookingPage from './Components/BookingComponents/BookingPage';
 import BookingConfirmation from './Components/BookingComponents/BookingConfirmation';
@@ -16,15 +16,15 @@ import Footer from './Components/Footer';
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Header></Header>
       <Routes>
-        <Route path="/" exact element={<Homepage></Homepage>} />
-        <Route path="/booking" exact element={<BookingPage></BookingPage>} />
-        <Route path="/booking-confirmation" exact element={<BookingConfirmation></BookingConfirmation>} />
+        <Route path="/" element={<Homepage></Homepage>} />
+        <Route path="/booking" element={<BookingPage></BookingPage>} />
+        <Route path="/booking-confirmation" element={<BookingConfirmation></BookingConfirmation>} />
       </Routes>
       <Footer></Footer>
-    </BrowserRouter>
+    </>
   );
 }
 
