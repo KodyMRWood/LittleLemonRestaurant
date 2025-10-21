@@ -1,12 +1,70 @@
+import { useEffect, useState } from "react";
 import userPic from "../Assets/userIcon.svg";
 
+
+const testimonialReviews = {
+  great:"The food here is amazing! Definitely recommend!",
+  good:"Food is good, and ambbiance is really nice.",
+  okay:"Not bad. I had has better italian food but also worse",
+  bad:"I did not like the food here. Too salty!",
+  awful:"Worst food I have ever had! Do not come (why is this on their website)"
+}
+
 function Testimonial() {
+  const [randomUser, setRandomUsers] = useState(null);
+  let rating = Math.floor(Math.random()*10) *0.5;
+
+  async function fetchTestimonial()
+  {
+    try{
+
+      const response = await fetch("https://randomuser.me/api/?inc=name,picture&format=json&noinfo");
+      
+      if(!response.ok)
+        {
+          throw new Error(`Response status: ${response.status}`);
+        }
+        const result = await response.json();
+        setRandomUsers(result.results[0]);
+    }
+    catch(error){
+      throw new Error(`Error was found with the fetch call ${error}`);
+    }
+  }
+
+  useEffect(()=>{
+    fetchTestimonial();
+  }, []);
+
+  function getReview(){
+    if(rating >=0 && rating<=1)
+      {
+        return testimonialReviews.awful;
+      }
+      if(rating >1 && rating<=2)
+      {
+        return testimonialReviews.bad;
+      }
+      if(rating >2 && rating<=3)
+      {
+        return testimonialReviews.okay;
+      }
+      if(rating >3 && rating<=4)
+      {
+        return testimonialReviews.good;
+      }
+      if(rating >4 && rating<=5)
+      {
+        return testimonialReviews.great;
+      }
+  }
+
   return (
     <article className="testimonial">
-        <img src={userPic} className="testimonial-image" alt="Image of customer who left this review"/>
-        <h4 className="testimonial-name">Name</h4>
-        <p className="testimonial-rating">4.5/5</p>
-        <p className="testimonial-description">Review of the food</p>
+        <img src={randomUser?.picture?.large || userPic} className="testimonial-image" alt="Image of customer who left this review"/>
+        <h4 className="testimonial-name">{randomUser ? `${randomUser.name.first} ${randomUser.name.last}` : "Name"}</h4>
+        <p className="testimonial-rating"> {rating}/5.0</p>
+        <p className="testimonial-description">{getReview()}</p>
     </article>
   )
 }
