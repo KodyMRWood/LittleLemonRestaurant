@@ -294,6 +294,7 @@ section{
     justify-self:center;
     align-self: center;
     padding-left: 10px ;
+    width: 20px;
   }
 }
 
