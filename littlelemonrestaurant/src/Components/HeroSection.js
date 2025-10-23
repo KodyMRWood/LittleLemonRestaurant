@@ -1,5 +1,4 @@
 // Library Imports
-import React from 'react'
 
 // Images
 import heroImage from "../Assets/restaurantchefB.jpg";

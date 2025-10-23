@@ -23,7 +23,7 @@ const menuData = [
   },
   {
     name:"Lemon Dessert",
-    description:"A light and zesty lemon tart that captures the essence of the Italian coast. Made with a buttery, flaky crust and a silky lemon cream filling, this refreshing dessert is finished with a dusting of powdered sugar.",
+    description:"A light and zesty lemon cake that captures the essence of the Italian coast. Made with a buttery, flaky crust and a silky lemon cream filling, this refreshing dessert is finished with a dusting of powdered sugar.",
     price:7.50,
     image:lemonDessert
   }
@@ -31,7 +31,7 @@ const menuData = [
 
 function HighlightSection() {
   return (
-    <section className="highlight-section">
+    <section id="highlight-section" className="highlight-section">
         <h2 className="section-title">Specials</h2>
         <button className="online-menu-button">Online Menu</button>
         <div className="special-cards-container"> 
