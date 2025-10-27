@@ -87,7 +87,6 @@ button{
   border: 1px solid var(--black);
   font-family: var(--karla-text);
   font-size: 1rem;
-  
 }
 
 button:active{
@@ -428,6 +427,49 @@ a:hover{
     margin:0px 10px;
   }
 }
+
+/* ------Scroll Buttons ------ */
+  .scroll-buttons button{
+    position:absolute;
+    background-color: rgb(255,255,255);
+    width:40px;
+    height:40px;
+    border:0px;
+    padding:0px;
+  }
+  .scroll-buttons button.next{
+     background-image: url('Assets/next-arrow.svg');
+  }
+
+  .scroll-buttons button.prev{
+      background-image: url('Assets/prev-arrow.svg');
+  }
+  
+  .scroll-buttons button:active{
+    background: center/cover no-repeat url('Assets/next-arrow.svg');
+    background-color: #333333;
+  }
+
+  #highlight-section .scroll-buttons button.next{
+    right: 11.5%;
+    bottom: 30%;
+  }
+
+  #highlight-section  .scroll-buttons button.prev{
+      left: 11.5%;
+      bottom: 30%;
+  }
+
+  #testimonial-section .scroll-buttons button.next{
+    right: 11.5%;
+    bottom: -38%;
+  }
+
+  #testimonial-section  .scroll-buttons button.prev{
+      left: 11.5%;
+      bottom: -38%;
+  }
+
 
 #about-section{
   position:relative;

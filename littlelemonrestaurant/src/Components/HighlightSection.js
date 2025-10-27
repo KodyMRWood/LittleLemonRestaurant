@@ -6,6 +6,7 @@ import SpecialCard from './SpecialCard'
 import greekSalad from "../Assets/greeksalad.jpg";
 import bruchetta from "../Assets/bruchetta.svg";
 import lemonDessert from "../Assets/lemondessert.jpg";
+import ScrollButtons from './ScrollButtons';
 
 
 const menuData = [
@@ -32,6 +33,7 @@ const menuData = [
 function HighlightSection() {
   return (
     <section id="highlight-section" className="highlight-section">
+        <ScrollButtons className=""></ScrollButtons>
         <h2 className="section-title">Specials</h2>
         <button className="online-menu-button">Online Menu</button>
         <div className="special-cards-container"> 
