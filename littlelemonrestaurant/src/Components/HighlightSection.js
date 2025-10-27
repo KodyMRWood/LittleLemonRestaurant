@@ -23,7 +23,7 @@ const menuData = [
   },
   {
     name:"Lemon Dessert",
-    description:"A light and zesty lemon cake that captures the essence of the Italian coast. Made with a buttery, flaky crust and a silky lemon cream filling, this refreshing dessert is finished with a dusting of powdered sugar.",
+    description:"A light and zesty lemon cake. Made with a buttery, flaky crust and a silky lemon cream filling, this refreshing dessert is finished with a dusting of powdered sugar.",
     price:7.50,
     image:lemonDessert
   }

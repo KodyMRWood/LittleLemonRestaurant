@@ -42,20 +42,20 @@ function BookingForm(props) {
   return (
 
     <form onSubmit={(e) => e.preventDefault()} id="BookingForm">
+        <label htmlFor="guests">Number of guests*</label>
+        <input className="form-guest form-input" type="number" placeholder='1' min="1" max="10" id="guests" data-testid="guests" name="guests" value={guests} onChange={handleGuestsChange} required/>
+
         <label htmlFor="res-date">Choose date*</label>
-        <input type="date" id="res-date" data-testid="res-date" name="res-date" value={date} onChange={handleDateChange} min={todayFormatted} required/>
+        <input className="form-date form-input" type="date" id="res-date" data-testid="res-date" name="res-date" value={date} onChange={handleDateChange} min={todayFormatted} required/>
 
         <label htmlFor="res-time">Choose time*</label>
-        <select id="res-time" data-testid="res-time" name="res-time" value={time} min="17:00" onChange={handleTimeChange} required>
+        <select className="form-time form-input" id="res-time" data-testid="res-time" name="res-time" value={time} min="17:00" onChange={handleTimeChange} required>
             <option value="none">Pick a Time</option>
             {props.availableTimes.map((time) => (currentTime < time) ? <option key={time} value={time}>{time}</option> : false)}
         </select>
 
-        <label htmlFor="guests">Number of guests*</label>
-        <input type="number" placeholder='1' min="1" max="10" id="guests" data-testid="guests" name="guests" value={guests} onChange={handleGuestsChange} required/>
-
         <label htmlFor="occasion">Occasion</label>
-        <select id="occasion" data-testid="occasion" name="occasion" value={occasion} onChange={(e)=> setOccasion(e.target.value)}>
+        <select className="form-occasion form-input" id="occasion" data-testid="occasion" name="occasion" value={occasion} onChange={(e)=> setOccasion(e.target.value)}>
             <option value="none">None</option>
             <option value="birthday">Birthday</option>
             <option value="anniversary">Anniversary</option>
@@ -63,7 +63,7 @@ function BookingForm(props) {
             <option value="promotion">Promotion</option>
         </select>
 
-        <button type="submit" value="Confirm Reservation" disabled={!(timeChanged)} onClick={(e) => {props.submit(e,new FormData(document.forms.BookingForm))}}>Confirm Reservation</button>
+        <button className="form-submit form-input" type="submit" value="Confirm Reservation" disabled={!(timeChanged)} onClick={(e) => {props.submit(e,new FormData(document.forms.BookingForm))}}>Confirm Reservation</button>
     </form>
   )
 }

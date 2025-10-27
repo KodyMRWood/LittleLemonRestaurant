@@ -16,7 +16,6 @@ export function initTimes(){
   }
   else{
     return fetchAPI(new Date());
-    
   }
 }
 
@@ -94,7 +93,8 @@ function BookingPage() {
     };
 
   return (
-    <main>
+    <main className="booking-page">
+        <h1>Reserve a Table</h1>
         <BookingForm availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} submit={submitForm} />
     </main>
   )

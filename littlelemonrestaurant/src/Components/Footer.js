@@ -30,9 +30,9 @@ function Footer() {
               <li><a href="mailto:fake@email.com">email</a></li>
           </ul>
           <ul> <span>Social Media</span>
-              <li><a href=""><img src={facebookIcon} alt="Facebook logo as a button" className="" width={"40px"}/> </a></li>
-              <li><a href=""><img src={instagramIcon} alt="Instagram logo as a button" className="" width={"40px"}/> </a></li>
-              <li><a href=""><img src={twitterIcon} alt="X / Twitter logo as a button" className="" width={"40px"}/> </a></li>
+              <li><a href="http://facebook.com/" target='_blank'><img src={facebookIcon} alt="Facebook logo as a button" className="social-link" /> </a></li>
+              <li><a href="https://www.instagram.com/" target='_blank'><img src={instagramIcon} alt="Instagram logo as a button" className="social-link" /> </a></li>
+              <li><a href="https://x.com/" target='_blank'><img src={twitterIcon} alt="X / Twitter logo as a button" className="social-link" /> </a></li>
           </ul>
         </div>
     </footer>

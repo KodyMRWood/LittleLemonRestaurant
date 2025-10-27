@@ -4,7 +4,7 @@ import userPic from "../Assets/userIcon.svg";
 
 const testimonialReviews = {
   great:"The food here is amazing! Definitely recommend!",
-  good:"Food is good, and ambbiance is really nice.",
+  good:"Food is good, and ambiance is really nice.",
   okay:"Not bad. I had has better italian food but also worse",
   bad:"I did not like the food here. Too salty!",
   awful:"Worst food I have ever had! Do not come (why is this on their website)"
