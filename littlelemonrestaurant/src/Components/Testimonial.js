@@ -55,7 +55,7 @@ function Testimonial() {
         setRandomUsers(result.results[0]);
     }
     catch(error){
-      throw new Error(`Error was found with the fetch call ${error}`);
+      console.error(`Error was found with the fetch call ${error}`);
     }
   }
 
