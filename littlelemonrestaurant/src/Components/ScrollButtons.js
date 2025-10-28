@@ -1,10 +1,8 @@
-import React from 'react'
-
-function ScrollButtons() {
+function ScrollButtons(props) {
   return (
     <div className="scroll-buttons">
-        <button className='prev'></button>
-        <button className='next'></button>
+        <button className='prev' onClick={()=>{props.handleScroll(-props.cardWidth)}}></button>
+        <button className='next' onClick={()=>{props.handleScroll(props.cardWidth)}}></button>
     </div>
   )
 }

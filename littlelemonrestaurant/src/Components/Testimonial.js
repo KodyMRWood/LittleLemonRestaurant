@@ -10,33 +10,7 @@ const testimonialReviews = {
   awful:"Worst food I have ever had! Do not come (why is this on their website)"
 }
 
-function Testimonial() {
-  const [randomUser, setRandomUsers] = useState(null);
-  let rating = Math.floor(Math.random()*10) *0.5;
-
-  async function fetchTestimonial()
-  {
-    try{
-
-      const response = await fetch("https://randomuser.me/api/?inc=name,picture&format=json&noinfo");
-      
-      if(!response.ok)
-        {
-          throw new Error(`Response status: ${response.status}`);
-        }
-        const result = await response.json();
-        setRandomUsers(result.results[0]);
-    }
-    catch(error){
-      throw new Error(`Error was found with the fetch call ${error}`);
-    }
-  }
-
-  useEffect(()=>{
-    fetchTestimonial();
-  }, []);
-
-  function getReview(){
+  function getReview(rating){
     if(rating >=0 && rating<=1)
       {
         return testimonialReviews.awful;
@@ -59,12 +33,42 @@ function Testimonial() {
       }
   }
 
+
+function Testimonial() {
+  const [randomUser, setRandomUsers] = useState(null);
+
+
+    const [rating, setRating] = useState(Math.floor(Math.random()*10) *0.5);
+    const initReview = getReview(rating);
+
+  async function fetchTestimonial()
+  {
+    try{
+
+      const response = await fetch("https://randomuser.me/api/?inc=name,picture&format=json&noinfo");
+
+      if(!response.ok)
+        {
+          throw new Error(`Response status: ${response.status}`);
+        }
+        const result = await response.json();
+        setRandomUsers(result.results[0]);
+    }
+    catch(error){
+      throw new Error(`Error was found with the fetch call ${error}`);
+    }
+  }
+
+  useEffect(()=>{
+    fetchTestimonial();
+  }, []);
+
   return (
     <article className="testimonial">
         <img src={randomUser?.picture?.large || userPic} className="testimonial-image" alt="Image of customer who left this review"/>
         <h4 className="testimonial-name">{randomUser ? `${randomUser.name.first} ${randomUser.name.last}` : "Name"}</h4>
         <p className="testimonial-rating"> {rating}/5.0</p>
-        <p className="testimonial-description">{getReview()}</p>
+        <p className="testimonial-description">{initReview}</p>
     </article>
   )
 }

@@ -226,6 +226,7 @@ a:hover{
   margin-top: 20px;
   overflow-x:scroll;
   height: auto;
+  scroll-behavior: smooth;
 }
 
 @media screen and (max-width:768px){
@@ -372,6 +373,7 @@ a:hover{
     margin-top: 20px;
     overflow-x:scroll;
     width:auto;
+    scroll-behavior: smooth;
   }
 
   .testimonial{
@@ -431,7 +433,7 @@ a:hover{
 /* ------Scroll Buttons ------ */
   .scroll-buttons button{
     position:absolute;
-    background-color: rgb(255,255,255);
+    background-color: rgba(0,0,0,0);
     width:40px;
     height:40px;
     border:0px;

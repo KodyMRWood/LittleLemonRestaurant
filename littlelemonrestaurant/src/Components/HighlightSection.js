@@ -1,5 +1,5 @@
 // Library Imports
-
+import {useRef, useState} from 'react'
 // Components
 import SpecialCard from './SpecialCard'
 
@@ -30,18 +30,34 @@ const menuData = [
   }
 ]
 
+const cardWidth =  (window.screen.width <= 768)? 320 : 500;
+
 function HighlightSection() {
+
+  function clamp(num, lower, upper) {
+    return Math.min(Math.max(num, lower), upper);
+  }
+
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const containerRef = useRef();
+
+  const handleScroll = (scrollAmount) =>
+  {
+    const newScrollPosition =  clamp(scrollPosition + scrollAmount, 0 , cardWidth*(menuData.length-1));
+    setScrollPosition(newScrollPosition);
+    containerRef.current.scrollLeft = newScrollPosition;
+  }
   return (
     <section id="highlight-section" className="highlight-section">
-        <ScrollButtons className=""></ScrollButtons>
+        <ScrollButtons className="" handleScroll={handleScroll} cardWidth={cardWidth}></ScrollButtons>
         <h2 className="section-title">Specials</h2>
         <button className="online-menu-button">Online Menu</button>
-        <div className="special-cards-container"> 
+        <div className="special-cards-container" ref={containerRef}>
           {menuData.map((data)=>
-          <SpecialCard name={data.name} 
-          description={data.description} 
-          price={data.price} 
-          image={data.image} 
+          <SpecialCard name={data.name}
+          description={data.description}
+          price={data.price}
+          image={data.image}
           key={data.name}>
           </SpecialCard>)}
         </div>
