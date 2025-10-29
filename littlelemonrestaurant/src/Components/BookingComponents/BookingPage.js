@@ -1,6 +1,7 @@
 import {useReducer} from 'react';
 import BookingForm from './BookingForm';
 import { useNavigate } from 'react-router-dom';
+import SeatImage from '../../Assets/restaurant.jpg'
 
 const convertDate = function (date)
 { 
@@ -94,8 +95,11 @@ function BookingPage() {
 
   return (
     <main className="booking-page">
-        <h1>Reserve a Table</h1>
+      <section className="booking-page-content">
+        <h1 className="booking-title">Reserve a Table</h1>
         <BookingForm availableTimes={availableTimes} setAvailableTimes={setAvailableTimes} submit={submitForm} />
+        <img className="booking-image" src={SeatImage} alt="seating area on the restaurants patio"/>
+      </section>
     </main>
   )
 }

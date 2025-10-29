@@ -4,7 +4,7 @@ import  ConfirmImage from "../../Assets/restaurantfood.jpg"
 function BookingConfirmation() {
   const navigate = useNavigate();
   return (
-    <main> 
+    <main className="confirm-page"> 
       <section className="confirm-section">
         <h1 className="confirm-title">
           Booking Confirmed! 

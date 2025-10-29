@@ -1,5 +1,6 @@
-body{
+html, body{
   margin:0;
+  height:100%;
   font-family: var(--karla-text);
 }
 
@@ -70,6 +71,7 @@ main{
   display:flex;
   flex-direction: column;
   gap:20px;
+  background-color: var(--white);
 }
 
 .section-title{
@@ -78,6 +80,7 @@ main{
 
 section{
   padding: 0px 40px 20px 40px;
+  background-color: var(--white);
 }
 
 button{
@@ -206,8 +209,9 @@ a:hover{
   color:var(--white);
   }
 
-  .hero-title{
+  .hero-title > h1{
     grid-area: 1 / 1 / 2 / 2;
+    font-size:4rem;
   }
 
   .hero-title > h2{
@@ -239,7 +243,7 @@ a:hover{
     justify-self: flex-end;
     align-self: center;
     margin: 0;
-    height: 60%;
+    height: 30vh;
     width: 100%;
     border-radius: 16px;
   }
@@ -293,7 +297,7 @@ a:hover{
     grid-template-rows: 1fr 0.25fr 0.6fr 0.2fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
-    width:100%;
+    width:calc(100% - 2px);
     max-width: 308px;
     border: 1px solid var(--black);
   }
@@ -311,7 +315,7 @@ a:hover{
     grid-area: 2 / 1 / 3 / 2;
     justify-self: flex-start;
     align-self: center;
-    font-size: 18px; /*1.22rem*/
+    font-size: 1.22rem;
     margin: 0px 10px;
   }
 
@@ -708,7 +712,7 @@ a:hover{
 {
   #about-section{
   min-height: 50vh;
-}
+  }
 }
 
 /* ------Footer Section------ */
@@ -765,18 +769,71 @@ footer ul li{
 
 
 /* ------Booking Page------ */
-.booking-page{
-  margin-top:20px;
-  padding: 20px 40px;
+main.booking-page{
+ flex-direction: row;
 }
 
+.booking-page{
+  margin-top:20px;
+  margin-bottom: 20px;
+  padding: 20px 40px;
+  justify-content: center;
+}
+
+.booking-page-content{
+  margin:0;
+  padding:0;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:40px;
+}
+
+.booking-title{
+  color: var(--pri-color);
+  width:100%;
+  height:auto;
+  flex:1 1 auto;
+}
+
+.booking-image{
+  flex: 1 1 auto;
+  width: 50%;
+}
 /* ------Booking Form------ */
 form{
+  justify-self: center;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 300px;
+  width: 100%;
+  max-width: 350px;
 }
+
+ @media screen and (max-width: 768px)
+{
+  form{
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 350px;
+  }
+}
+
+@media screen and (min-width: 769px)
+{
+  form{
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  max-width: 300px;
+  }
+}
+
 
 .form-guest{
   font-size:1rem;
@@ -784,21 +841,26 @@ form{
 
 label
 {
-  flex:auto;
+  flex:0 1 auto;
   font-size: 1.25rem;
+  height: auto;
 }
 
 .form-input
 {
   font-size: 1rem;
+  margin-bottom: 20px;
 }
 
 /* ------Booking Confirm Page------ */
+.confirm-page{
+  justify-content:center;
+}
+
 .confirm-section{
   display:flex;
   flex-direction:column;
   padding-top:20px;
-  min-height: 40vh;
 }
 
 .confirm-title{
@@ -814,10 +876,11 @@ label
   margin-top: 20px;
 }
 
+
 .confirm-image{
   justify-self:center;
   align-self:center;
-  max-width:50%;
+  max-width:40vw;
   height:auto;
   aspect-ratio: 1/1;
   margin:20px 0px;
