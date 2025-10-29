@@ -439,9 +439,6 @@ a:hover{
 
 @media screen and (max-width:768px){
 
-  #testimonial-section{
-    width:auto;
-  }
   .testimonial-cards-container{
     display: flex;
     gap: 10px;
@@ -577,15 +574,23 @@ a:hover{
 
 
 /* ------Scroll Buttons ------ */
-  .scroll-buttons button{
+  .scroll-buttons{
+    width: 100%;
+    display: flex;
+    flex-direction: row ;
+    justify-content: space-between;
     position:absolute;
+    justify-self: center;
+  }
+
+  .scroll-buttons button{
+    position:relative;
     background-color: rgba(0,0,0,0);
-    width:40px;
-    height:40px;
     border:0px;
     padding:0px;
     box-shadow: none;
   }
+
   .scroll-buttons button.next{
      background-image: url('Assets/next-arrow.svg');
   }
@@ -595,35 +600,68 @@ a:hover{
   }
   
   .scroll-buttons button.next:active{
-    background: center/cover no-repeat url('Assets/next-arrow.svg');
     background-color: var(--black);
   }
 
   .scroll-buttons button.prev:active{
-    background: center/cover no-repeat url('Assets/prev-arrow.svg');
     background-color: var(--black);
   }
 
+  @media screen and (max-width: 768px)
+{
+  .scroll-buttons button{
+    width:40px;
+    height:40px;
+  }
+
   #highlight-section .scroll-buttons button.next{
-    right: 11.5%;
-    bottom: 30%;
+    right: 40px;
+    top: 160px;
   }
 
   #highlight-section  .scroll-buttons button.prev{
-      left: 11.5%;
-      bottom: 30%;
+    left: 40px;
+    top: 160px;
   }
 
   #testimonial-section .scroll-buttons button.next{
-    right: 11.5%;
-    bottom: -38%;
+    right: 40px;
+    top: -23px;
   }
 
   #testimonial-section  .scroll-buttons button.prev{
-      left: 11.5%;
-      bottom: -38%;
+    left: 40px;
+    top: -23px;
+  }
+}
+
+  @media screen and (min-width: 769px)
+{
+    .scroll-buttons button{
+    width:50px;
+    height:50px;
   }
 
+  #highlight-section .scroll-buttons button.next{
+    right: 40px;
+    top: 225px;
+  }
+
+  #highlight-section  .scroll-buttons button.prev{
+    left: 40px;
+    top: 225px;
+  }
+
+  #testimonial-section .scroll-buttons button.next{
+    right: 75px;
+    top: -23px;
+  }
+
+  #testimonial-section  .scroll-buttons button.prev{
+    left: 45px;
+    top: -23px;
+  }
+}
 
 #about-section{
   position:relative;
@@ -664,6 +702,13 @@ a:hover{
 #about-section img:last-of-type{
   right:13%;
   bottom:3%;
+}
+
+ @media screen and (min-width: 769px)
+{
+  #about-section{
+  min-height: 50vh;
+}
 }
 
 /* ------Footer Section------ */

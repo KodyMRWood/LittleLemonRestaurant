@@ -40,18 +40,19 @@ function HighlightSection() {
 
   const [scrollPosition, setScrollPosition] = useState(0);
   const containerRef = useRef();
-
+  
   const handleScroll = (scrollAmount) =>
-  {
+    {
+    const containerWidth = containerRef.current.width / menuData.length;
     const newScrollPosition =  clamp(scrollPosition + scrollAmount, 0 , cardWidth*(menuData.length-1));
     setScrollPosition(newScrollPosition);
     containerRef.current.scrollLeft = newScrollPosition;
   }
   return (
     <section id="highlight-section" className="highlight-section">
-        <ScrollButtons className="" handleScroll={handleScroll} cardWidth={cardWidth}></ScrollButtons>
         <h2 className="section-title">Specials</h2>
         <button className="online-menu-button">Online Menu</button>
+        <ScrollButtons className="" handleScroll={handleScroll} cardWidth={cardWidth}></ScrollButtons>
         <div className="special-cards-container" ref={containerRef}>
           {menuData.map((data)=>
           <SpecialCard name={data.name}

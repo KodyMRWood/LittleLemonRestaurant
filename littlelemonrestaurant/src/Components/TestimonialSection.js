@@ -28,8 +28,8 @@ function TestimonialSection() {
   return (
     <section id="testimonial-section">
       <h2 className="section-title">Testimonials</h2>
-      <ScrollButtons handleScroll={handleScroll} cardWidth={cardWidth}></ScrollButtons>
         <div className="testimonial-cards-container" ref={containerRef}>
+      <ScrollButtons handleScroll={handleScroll} cardWidth={cardWidth}></ScrollButtons>
           <Testimonial></Testimonial>
           <Testimonial></Testimonial>
           <Testimonial></Testimonial>
