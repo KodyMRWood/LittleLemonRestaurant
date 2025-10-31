@@ -3,9 +3,18 @@ import BookingForm from './BookingForm';
 import { useNavigate } from 'react-router-dom';
 import SeatImage from '../../Assets/restaurant.jpg'
 
-const convertDate = function (date)
-{ 
-  return date.getFullYear()+'/'+(date.getMonth()+1)+'/'+date.getDate();
+const convertDate = function (date) {
+  if (typeof date === 'string') {
+    // If already in yyyy-mm-dd, convert to yyyy/mm/dd
+    return date.replace(/-/g, '/');
+  } else if (date instanceof Date) {
+    // Format Date object as yyyy/mm/dd
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}/${month}/${day}`;
+  }
+  return '';
 }
 
 export function initTimes(){
@@ -60,8 +69,8 @@ export const fetchAPI = function (date) {
 };
 
 export const submitAPI = function (formData) {
-    const datePicked = convertDate(new Date(formData.get('res-date')+"T00:00"));
-    const timePicked = formData.get('res-time');
+    const datePicked = convertDate(formData.date);
+    const timePicked = formData.time;
 
     let dateData =JSON.parse(window.localStorage.getItem(datePicked));
     if(dateData)
@@ -85,10 +94,10 @@ function BookingPage() {
     const navigate = useNavigate();
     const [availableTimes, setAvailableTimes] = useReducer(updateTimes, initTimes());
 
-    function submitForm(event, formData) {
+    function submitForm(formData) {
+        console.log(formData.date + " " + formData.time);
         if(submitAPI(formData))
         {
-            event.preventDefault();
             navigate("/Booking-Confirmation");
         }
     };
