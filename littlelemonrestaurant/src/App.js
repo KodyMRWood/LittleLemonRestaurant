@@ -16,15 +16,17 @@ import Footer from './Components/Footer';
 
 function App() {
   return (
-    <>
+    <div id="outer-Container">
       <Header></Header>
+      <div id="page-wrap"> 
       <Routes>
         <Route path="/" element={<Homepage></Homepage>} />
         <Route path="/booking" element={<BookingPage></BookingPage>} />
         <Route path="/booking-confirmation" element={<BookingConfirmation></BookingConfirmation>} />
       </Routes>
       <Footer></Footer>
-    </>
+      </div>
+    </div>
   );
 }
 

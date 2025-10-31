@@ -110,13 +110,91 @@ a:hover{
 
 
 /* ------Navigation Bar Section------ */
-
 #navigation-bar{
   display: flex;
   gap: 5vw;
   width: auto;
   overflow-x: auto;
 }
+
+#navigation-bar button{
+  box-shadow: none;
+}
+/* Position and sizing of burger button */
+.bm-burger-button {
+  position: fixed;
+  width: 40px;
+  height: 30px;
+  right: 40px;
+  top: 40px;
+}
+
+/* Color/shape of burger icon bars */
+.bm-burger-bars {
+  background: var(--black);
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: var(--sec-color);
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 40px;
+  width: 40px;
+}
+
+/* Color/shape of close button cross */
+.bm-cross {
+  background: var(--white);
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  top:0;
+  height: 100%;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: var(--pri-color);
+  padding: 2.5em 1.5em 0;
+  font-size: 1.5em;
+  width: auto;
+  border-left: 2px solid var(--black);
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: #b8b7ad;
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+  color:var(--white);
+  padding: 0.25em;
+  margin: 0.25em
+}
+
+/* Individual item */
+a.bm-item:visited {
+  display: inline-block;
+  color:var(--white);
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  top:0;
+  right:0;
+  background: rgba(0, 0, 0, 0);
+}
+
 
 #nav-links{
   flex: 2 1 auto;
