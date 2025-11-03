@@ -43,8 +43,7 @@ function HighlightSection() {
   
   const handleScroll = (scrollAmount) =>
     {
-    const containerWidth = containerRef.current.width / menuData.length;
-    const newScrollPosition =  clamp(scrollPosition + scrollAmount, 0 , cardWidth*(menuData.length-1));
+    const newScrollPosition =  clamp(scrollPosition + scrollAmount, 0 ,cardWidth*(menuData.length-1));
     setScrollPosition(newScrollPosition);
     containerRef.current.scrollLeft = newScrollPosition;
   }

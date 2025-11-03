@@ -11,7 +11,12 @@ function HeroSection() {
         <h1>Little Lemon</h1>
         <h2>Chicago</h2>
       </div>
-        <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
+        <p>
+          We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
+          <br/>
+          <br/>
+          Please come and enjoy our delicious dishes and warm atmosphere.
+        </p>
         <img src={heroImage} className="hero-image" alt="Image of chef playing garnish on top plate of food"/>
         <div className="reserve-button-container">
           <Link to="/booking">
