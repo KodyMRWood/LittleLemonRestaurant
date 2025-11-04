@@ -39,7 +39,6 @@ function BookingForm(props) {
      validationSchema: validationSchema,
      onSubmit: values => {
         props.submit(values,new FormData(document.forms.BookingForm))
-        alert(JSON.stringify(values, null, 2));
      },
    });
 
