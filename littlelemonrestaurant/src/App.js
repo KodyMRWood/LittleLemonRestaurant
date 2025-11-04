@@ -20,9 +20,9 @@ function App() {
       <Header></Header>
       <div id="page-wrap"> 
       <Routes>
-        <Route path="/" element={<Homepage></Homepage>} />
-        <Route path="/booking" element={<BookingPage></BookingPage>} />
-        <Route path="/booking-confirmation" element={<BookingConfirmation></BookingConfirmation>} />
+        <Route path="/LittleLemonRestaurant" element={<Homepage></Homepage>} />
+        <Route path="/LittleLemonRestaurant/booking" element={<BookingPage></BookingPage>} />
+        <Route path="/LittleLemonRestaurant/booking-confirmation" element={<BookingConfirmation></BookingConfirmation>} />
       </Routes>
       <Footer></Footer>
       </div>

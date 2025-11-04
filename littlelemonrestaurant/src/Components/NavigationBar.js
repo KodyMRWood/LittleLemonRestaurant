@@ -27,20 +27,20 @@ useEffect(()=>{
           </Link>
         {(windowWidth > mobileResolution) ?
         <ul id="nav-links">
-            <li><Link to="/">Home</Link></li>
-            <li><HashLink to="/#about-section">About</HashLink></li>
-            <li><HashLink to="/#highlight-section">Menu</HashLink></li>
-            <li><Link to="/booking">Reservations</Link></li>
-            <li><HashLink to="/#highlight-section">Order Online</HashLink></li>
-            <li><Link to="/">Login</Link></li>
+            <li><Link to="/LittleLemonRestaurant">Home</Link></li>
+            <li><HashLink to="/LittleLemonRestaurant#about-section">About</HashLink></li>
+            <li><HashLink to="/LittleLemonRestaurant#highlight-section">Menu</HashLink></li>
+            <li><Link to="/LittleLemonRestaurant/booking">Reservations</Link></li>
+            <li><HashLink to="/LittleLemonRestaurant#highlight-section">Order Online</HashLink></li>
+            <li><Link to="/LittleLemonRestaurant">Login</Link></li>
         </ul> :
           <Menu pageWrapId={ "page-wrap" } outerContainerId={ "outer-Container" }right>
-            <Link to="/">Home</Link>
-            <HashLink to="/#about-section">About</HashLink>
-            <HashLink to="/#highlight-section">Menu</HashLink>
-            <Link to="/booking">Reservations</Link>
-            <HashLink to="/#highlight-section">Order Online</HashLink>
-            <Link to="/">Login</Link>
+            <Link to="/LittleLemonRestaurant">Home</Link>
+            <HashLink to="/LittleLemonRestaurant#about-section">About</HashLink>
+            <HashLink to="/LittleLemonRestaurant#highlight-section">Menu</HashLink>
+            <Link to="/LittleLemonRestaurant/booking">Reservations</Link>
+            <HashLink to="/LittleLemonRestaurant#highlight-section">Order Online</HashLink>
+            <Link to="/LittleLemonRestaurant">Login</Link>
           </Menu>
         }
     </nav>

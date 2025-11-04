@@ -17,12 +17,12 @@ function Footer() {
         </Link>
         <div className="footer-lists-container">
           <ul> <span>Navigation</span>
-                <li><Link to="/">Home</Link></li>
-                <li><HashLink to="/#about-section">About</HashLink></li>
-                <li><HashLink to="/#highlight-section">Menu</HashLink></li>
-                <li><Link to="/booking">Reservations</Link></li>
-                <li><HashLink to="/#highlight-section">Order Online</HashLink></li>
-                <li><Link to="/">Login</Link></li>
+                <li><Link to="/LittleLemonRestaurant">Home</Link></li>
+                <li><HashLink to="/LittleLemonRestaurant#about-section">About</HashLink></li>
+                <li><HashLink to="/LittleLemonRestaurant#highlight-section">Menu</HashLink></li>
+                <li><Link to="/LittleLemonRestaurant/booking">Reservations</Link></li>
+                <li><HashLink to="/LittleLemonRestaurant#highlight-section">Order Online</HashLink></li>
+                <li><Link to="/LittleLemonRestaurant">Login</Link></li>
           </ul>
           <ul> <span>Contact</span>
               <li>123 FakeAddress Avenue</li>
